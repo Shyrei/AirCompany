@@ -1,6 +1,6 @@
 package by.shyrei.aircompany.entity;
 
-import by.shyrei.aircompany.aircraftenum.AircraftName;
+import by.shyrei.aircompany.service.AircraftName;
 
 /**
  * Project AirCompany
@@ -8,7 +8,6 @@ import by.shyrei.aircompany.aircraftenum.AircraftName;
  * author Shyrei Uladzimir
  */
 public class CargoAircraft extends Aircraft {
-
 
     private int payload;
 
@@ -32,6 +31,7 @@ public class CargoAircraft extends Aircraft {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof CargoAircraft)) return false;
+        if (!super.equals(o)) return false;
 
         CargoAircraft that = (CargoAircraft) o;
 
@@ -40,7 +40,9 @@ public class CargoAircraft extends Aircraft {
 
     @Override
     public int hashCode() {
-        return getPayload();
+        int result = super.hashCode();
+        result = 31 * result + getPayload();
+        return result;
     }
 
     @Override

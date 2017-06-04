@@ -1,7 +1,8 @@
 package by.shyrei.aircompany.factory;
 
-import by.shyrei.aircompany.aircraftenum.AircraftName;
+import by.shyrei.aircompany.service.AircraftName;
 import by.shyrei.aircompany.entity.PassengerAircraft;
+import by.shyrei.aircompany.service.IdGenerator;
 
 /**
  * Project AirCompany
@@ -28,6 +29,6 @@ public class PassengerAircraftFactory extends AbstractAircraftFactory<PassengerA
         int fuel = Integer.parseInt(aircraft[3]);
         int speed = Integer.parseInt(aircraft[4]);
         int exitLimit = Integer.parseInt(aircraft[5]);
-        return new PassengerAircraft(1, name, model,weight, fuel,speed,exitLimit);
+        return new PassengerAircraft(IdGenerator.generateId(), name, model,weight, fuel,speed,exitLimit);
     }
 }

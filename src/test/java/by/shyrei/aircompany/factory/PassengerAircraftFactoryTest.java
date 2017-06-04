@@ -1,5 +1,5 @@
 package by.shyrei.aircompany.factory;
-import by.shyrei.aircompany.aircraftenum.AircraftName;
+import by.shyrei.aircompany.service.AircraftName;
 import by.shyrei.aircompany.entity.PassengerAircraft;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class PassengerAircraftFactoryTest {
 
-    private PassengerAircraft actual = new PassengerAircraft(1, AircraftName.Boing, "747", 500, 40, 1000, 200);
+    private PassengerAircraft actual = new PassengerAircraft(1000, AircraftName.Boing, "747", 500, 40, 1000, 200);
     private PassengerAircraftFactory passengerFactory = PassengerAircraftFactory.getInstance();
 
     @Test
@@ -19,5 +19,7 @@ public class PassengerAircraftFactoryTest {
         String line = "Boing 747 500 40 1000 200";
         PassengerAircraft expected = passengerFactory.createAircaft(line);
         Assert.assertEquals(expected, actual);
+        System.out.println(expected.toString());
+        System.out.println(actual.toString());
     }
 }

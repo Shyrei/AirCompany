@@ -1,6 +1,8 @@
 package by.shyrei.aircompany.factory;
 
+import by.shyrei.aircompany.service.AircraftName;
 import by.shyrei.aircompany.entity.CargoAircraft;
+import by.shyrei.aircompany.service.IdGenerator;
 
 /**
  * Project AirCompany
@@ -9,12 +11,23 @@ import by.shyrei.aircompany.entity.CargoAircraft;
  */
 public class CargoAircraftFactory extends AbstractAircraftFactory<CargoAircraft> {
 
-    public CargoAircraft getInstance() {
-        return new CargoAircraft();
+    private static CargoAircraftFactory cargoFactory = new CargoAircraftFactory();
+
+    private CargoAircraftFactory(){}
+
+    public static CargoAircraftFactory getInstance() {
+        return cargoFactory;
     }
 
     @Override
     public CargoAircraft createAircaft(String line) {
-        return null;
+        String[] aircraft = line.split("\\s");
+        AircraftName name = AircraftName.stringToName(aircraft[0]);
+        String model = aircraft[1];
+        int weight = Integer.parseInt(aircraft[2]);
+        int fuel = Integer.parseInt(aircraft[3]);
+        int speed = Integer.parseInt(aircraft[4]);
+        int exitLimit = Integer.parseInt(aircraft[5]);
+        return new CargoAircraft(IdGenerator.generateId(), name, model,weight, fuel,speed,exitLimit);
     }
 }

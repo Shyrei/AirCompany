@@ -1,6 +1,6 @@
 package by.shyrei.aircompany.entity;
 
-import by.shyrei.aircompany.aircraftenum.AircraftName;
+import by.shyrei.aircompany.service.AircraftName;
 
 /**
  * Project AirCompany
@@ -31,6 +31,7 @@ public class PassengerAircraft extends Aircraft {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof PassengerAircraft)) return false;
+        if (!super.equals(o)) return false;
 
         PassengerAircraft that = (PassengerAircraft) o;
 
@@ -39,7 +40,9 @@ public class PassengerAircraft extends Aircraft {
 
     @Override
     public int hashCode() {
-        return getExitLimit();
+        int result = super.hashCode();
+        result = 31 * result + getExitLimit();
+        return result;
     }
 
     @Override

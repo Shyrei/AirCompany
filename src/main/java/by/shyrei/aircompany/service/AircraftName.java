@@ -1,4 +1,4 @@
-package by.shyrei.aircompany.aircraftenum;
+package by.shyrei.aircompany.service;
 
 /**
  * Project AirCompany

@@ -1,6 +1,6 @@
 package by.shyrei.aircompany.entity;
 
-import by.shyrei.aircompany.aircraftenum.AircraftName;
+import by.shyrei.aircompany.service.AircraftName;
 
 /**
  * Project AirCompany
@@ -77,14 +77,38 @@ public abstract class Aircraft {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Aircraft)) return false;
+
+        Aircraft aircraft = (Aircraft) o;
+
+        if (getAircraftId() != aircraft.getAircraftId()) return false;
+        if (getAircraftWeight() != aircraft.getAircraftWeight()) return false;
+        if (getFuelPerHour() != aircraft.getFuelPerHour()) return false;
+        if (getSpeed() != aircraft.getSpeed()) return false;
+        if (getAircraftName() != aircraft.getAircraftName()) return false;
+        return getAircraftModel() != null ? getAircraftModel().equals(aircraft.getAircraftModel()) : aircraft.getAircraftModel() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getAircraftId();
+        result = 31 * result + (getAircraftName() != null ? getAircraftName().hashCode() : 0);
+        result = 31 * result + (getAircraftModel() != null ? getAircraftModel().hashCode() : 0);
+        result = 31 * result + getAircraftWeight();
+        result = 31 * result + getFuelPerHour();
+        result = 31 * result + getSpeed();
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return "Aircraft{" +
-                "aircraftId=" + aircraftId +
+        return  "aircraftId=" + aircraftId +
                 ", aircraftName='" + aircraftName + '\'' +
                 ", aircraftModel='" + aircraftModel + '\'' +
                 ", aircraftWeight=" + aircraftWeight +
                 ", fuelPerHour=" + fuelPerHour +
-                ", speed=" + speed +
-                '}';
+                ", speed=" + speed;
     }
 }
