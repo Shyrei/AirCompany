@@ -1,0 +1,22 @@
+{12-06-2017 12:35:22} {main} { WARN} {shyrei.aircompany.entity.AircraftName} {line 21} {Некоректное название самолета :oing. Название самолета установлено по умолчанию.} 
+{12-06-2017 13:05:24} {main} { WARN} {shyrei.aircompany.entity.AircraftName} {line 21} {Некоректное название самолета :oing. Название самолета установлено по умолчанию.} 
+{12-06-2017 13:07:18} {main} { WARN} {shyrei.aircompany.entity.AircraftName} {line 21} {Некоректное название самолета :oing. Название самолета установлено по умолчанию.} 
+{12-06-2017 13:35:19} {main} { WARN} {shyrei.aircompany.entity.AircraftName} {line 21} {Некоректное название самолета :oing. Название самолета установлено по умолчанию.} 
+{12-06-2017 13:35:19} {main} { WARN} {shyrei.aircompany.entity.AircraftName} {line 21} {Некоректное название самолета :oing. Название самолета установлено по умолчанию.} 
+{12-06-2017 13:47:22} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 25} {Строка: ass Boing 500 40 1000 200 не корректа.} 
+{12-06-2017 13:48:47} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 25} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 14:01:32} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 14:01:42} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 14:01:42} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pas Boing 747 500 40 1000 200 не корректна.} 
+{12-06-2017 14:02:03} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 14:04:04} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass Boing 747 500 40 1000 2000 не корректна.} 
+{12-06-2017 14:04:41} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 14:04:41} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass Boing 747 500 40 1000 200 не корректна.} 
+{12-06-2017 14:07:15} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:17:48} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:18:49} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:28:07} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:30:02} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:30:28} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:31:35} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
+{12-06-2017 15:31:46} {main} { WARN} {shyrei.aircompany.service.LineValidator} {line 23} {Строка: pass AN 500 40 900 150 не корректна.} 
