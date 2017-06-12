@@ -19,7 +19,7 @@ public class CargoAircraftFactory extends AircraftFactory<CargoAircraft> {
     }
 
     @Override
-    public CargoAircraft createAircaft(String line) {
+    public CargoAircraft createAircraft(String line) {
         String[] aircraft = line.split("\\s");
         AircraftName name = AircraftName.stringToName(aircraft[1]);
         String model = aircraft[2];

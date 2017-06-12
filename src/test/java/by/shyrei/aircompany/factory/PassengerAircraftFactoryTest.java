@@ -39,7 +39,7 @@ public class PassengerAircraftFactoryTest {
 
     @Test
     public void createAircaft() throws Exception {
-        AbstractAircraft actual = factory.createAircaft(line);
+        AbstractAircraft actual = factory.createAircraft(line);
         actual.setAircraftId(1000);
         Assert.assertEquals(passengerAircraft, actual);
     }

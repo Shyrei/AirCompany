@@ -102,7 +102,7 @@ public abstract class AbstractAircraft {
 
     @Override
     public String toString() {
-        return  "aircraftId=" + aircraftId +
+        return "aircraftId=" + aircraftId +
                 ", aircraftName='" + aircraftName + '\'' +
                 ", aircraftModel='" + aircraftModel + '\'' +
                 ", aircraftWeight=" + aircraftWeight +

@@ -39,15 +39,11 @@ public class AirLineSorterTest {
 
     @Test
     public void sortByWeight() throws Exception {
-        System.out.println(airLine.getAllAircraft());
         ArrayList<AbstractAircraft> test = comparator.sortByWeight(airLine.getAllAircraft());
-        System.out.println(test);
     }
 
     @Test
     public void sortByWeightAndSpeed() throws Exception {
-        System.out.println(airLine.getAllAircraft());
         ArrayList<AbstractAircraft> test = comparator.sortByWeightAndSpeed(airLine.getAllAircraft());
-        System.out.println(test);
     }
 }

@@ -13,14 +13,14 @@ import java.util.ArrayList;
  */
 public class AirLineCreator {
 
-    public AirLine createAirline(ArrayList<String> inputAircrafts){
+    public AirLine createAirline(ArrayList<String> inputAircrafts) {
         AirLine airLine = new AirLine();
-        for (String aircraft: inputAircrafts) {
+        for (String aircraft : inputAircrafts) {
             if (aircraft.substring(0, aircraft.indexOf(" ")).equals("cargo")) {
-                AbstractAircraft cargoAircraft = CargoAircraftFactory.getInstance().createAircaft(aircraft);
+                AbstractAircraft cargoAircraft = CargoAircraftFactory.getInstance().createAircraft(aircraft);
                 airLine.addAircraft(cargoAircraft);
             } else {
-                AbstractAircraft passengerAircraft = PassengerAircraftFactory.getInstance().createAircaft(aircraft);
+                AbstractAircraft passengerAircraft = PassengerAircraftFactory.getInstance().createAircraft(aircraft);
                 airLine.addAircraft(passengerAircraft);
             }
         }

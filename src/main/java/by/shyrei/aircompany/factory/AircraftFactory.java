@@ -9,5 +9,5 @@ import by.shyrei.aircompany.entity.AbstractAircraft;
  */
 public abstract class AircraftFactory<T extends AbstractAircraft> {
 
-    public abstract T createAircaft(String line);
+    public abstract T createAircraft(String line);
 }
