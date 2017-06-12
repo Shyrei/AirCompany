@@ -1,25 +1,23 @@
 package by.shyrei.aircompany.entity;
 
-import by.shyrei.aircompany.service.AircraftName;
-
 /**
  * Project AirCompany
  * Created on 02.06.2017.
  * author Shyrei Uladzimir
  */
-public abstract class Aircraft {
+public abstract class AbstractAircraft {
 
-    private int aircraftId;
+    private long aircraftId;
     private AircraftName aircraftName;
     private String aircraftModel;
     private int aircraftWeight;
     private int fuelPerHour;
     private int speed;
 
-    public Aircraft() {
+    public AbstractAircraft() {
     }
 
-    public Aircraft(int aircraftId, AircraftName aircraftName, String aircraftModel, int aircraftWeight, int fuelPerHour, int speed) {
+    public AbstractAircraft(long aircraftId, AircraftName aircraftName, String aircraftModel, int aircraftWeight, int fuelPerHour, int speed) {
         this.aircraftId = aircraftId;
         this.aircraftName = aircraftName;
         this.aircraftModel = aircraftModel;
@@ -28,11 +26,11 @@ public abstract class Aircraft {
         this.speed = speed;
     }
 
-    public int getAircraftId() {
+    public long getAircraftId() {
         return aircraftId;
     }
 
-    public void setAircraftId(int aircraftId) {
+    public void setAircraftId(long aircraftId) {
         this.aircraftId = aircraftId;
     }
 
@@ -79,21 +77,21 @@ public abstract class Aircraft {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Aircraft)) return false;
+        if (!(o instanceof AbstractAircraft)) return false;
 
-        Aircraft aircraft = (Aircraft) o;
+        AbstractAircraft abstractAircraft = (AbstractAircraft) o;
 
-        if (getAircraftId() != aircraft.getAircraftId()) return false;
-        if (getAircraftWeight() != aircraft.getAircraftWeight()) return false;
-        if (getFuelPerHour() != aircraft.getFuelPerHour()) return false;
-        if (getSpeed() != aircraft.getSpeed()) return false;
-        if (getAircraftName() != aircraft.getAircraftName()) return false;
-        return getAircraftModel() != null ? getAircraftModel().equals(aircraft.getAircraftModel()) : aircraft.getAircraftModel() == null;
+        if (getAircraftId() != abstractAircraft.getAircraftId()) return false;
+        if (getAircraftWeight() != abstractAircraft.getAircraftWeight()) return false;
+        if (getFuelPerHour() != abstractAircraft.getFuelPerHour()) return false;
+        if (getSpeed() != abstractAircraft.getSpeed()) return false;
+        if (getAircraftName() != abstractAircraft.getAircraftName()) return false;
+        return getAircraftModel() != null ? getAircraftModel().equals(abstractAircraft.getAircraftModel()) : abstractAircraft.getAircraftModel() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getAircraftId();
+        int result = (int) (getAircraftId() ^ (getAircraftId() >>> 32));
         result = 31 * result + (getAircraftName() != null ? getAircraftName().hashCode() : 0);
         result = 31 * result + (getAircraftModel() != null ? getAircraftModel().hashCode() : 0);
         result = 31 * result + getAircraftWeight();

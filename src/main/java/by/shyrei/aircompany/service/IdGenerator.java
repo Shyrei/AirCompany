@@ -7,9 +7,9 @@ package by.shyrei.aircompany.service;
  */
 public class IdGenerator {
 
-    private static int counter = 1000;
+    private static long counter = 1000;
 
-    public static int generateId(){
+    public static long generateId(){
         return counter++;
     }
 }

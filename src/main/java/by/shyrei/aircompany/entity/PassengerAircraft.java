@@ -1,20 +1,18 @@
 package by.shyrei.aircompany.entity;
 
-import by.shyrei.aircompany.service.AircraftName;
-
 /**
  * Project AirCompany
  * Created on 02.06.2017.
  * author Shyrei Uladzimir
  */
-public class PassengerAircraft extends Aircraft {
+public class PassengerAircraft extends AbstractAircraft {
 
     private int exitLimit;
 
     public PassengerAircraft() {
     }
 
-    public PassengerAircraft(int aircraftId, AircraftName aircraftName, String aircraftModel, int aircraftWeight, int fuelPerHour, int speed, int exitLimit) {
+    public PassengerAircraft(long aircraftId, AircraftName aircraftName, String aircraftModel, int aircraftWeight, int fuelPerHour, int speed, int exitLimit) {
         super(aircraftId, aircraftName, aircraftModel, aircraftWeight, fuelPerHour, speed);
         this.exitLimit = exitLimit;
     }
@@ -47,8 +45,8 @@ public class PassengerAircraft extends Aircraft {
 
     @Override
     public String toString() {
-        return "PassengerAircraft{" +
+        return "PassengerAircraft: " +
                 "exitLimit=" + exitLimit +
-                '}'+ super.toString();
+                ", "+ super.toString();
     }
 }

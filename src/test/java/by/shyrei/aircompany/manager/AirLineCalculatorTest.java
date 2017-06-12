@@ -1,11 +1,13 @@
 package by.shyrei.aircompany.manager;
 
+import by.shyrei.aircompany.entity.AbstractAircraft;
 import by.shyrei.aircompany.entity.AirLine;
-import by.shyrei.aircompany.entity.Aircraft;
 import by.shyrei.aircompany.entity.CargoAircraft;
 import by.shyrei.aircompany.entity.PassengerAircraft;
-import by.shyrei.aircompany.service.AircraftName;
+import by.shyrei.aircompany.entity.AircraftName;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -15,33 +17,37 @@ import org.junit.Test;
  */
 public class AirLineCalculatorTest {
 
-    private Aircraft cargo1 = new CargoAircraft(1, AircraftName.Boing, "747", 2, 3, 4, 250);
-    private Aircraft passenger1 = new PassengerAircraft(2, AircraftName.TY, "154", 6, 7, 8 , 150);
-    private Aircraft passenger2 = new PassengerAircraft(3, AircraftName.TY, "154", 6, 7, 8 , 200);
-    private Aircraft cargo2 = new CargoAircraft(4, AircraftName.Boing, "730", 22, 33, 44,300);
+    private AirLine airLine = new AirLine();
     private AirLineCalculator calculator = new AirLineCalculator();
-    private AirLine company = new AirLine();
 
+    @Before
+    public void init() {
+        AbstractAircraft cargo1 = new CargoAircraft(1, AircraftName.BOING, "747", 2, 3, 4, 250);
+        AbstractAircraft passenger1 = new PassengerAircraft(2, AircraftName.TY, "154", 6, 7, 8, 150);
+        AbstractAircraft passenger2 = new PassengerAircraft(3, AircraftName.TY, "154", 6, 7, 8, 200);
+        AbstractAircraft cargo2 = new CargoAircraft(4, AircraftName.BOING, "730", 22, 33, 44, 300);
+        airLine.addAircraft(cargo1);
+        airLine.addAircraft(passenger1);
+        airLine.addAircraft(passenger2);
+        airLine.addAircraft(cargo2);
+    }
+
+    @After
+    public void clearData() {
+        airLine.getAllAircraft().clear();
+    }
 
     @Test
     public void exitLimitCalculator() throws Exception {
-        company.add(cargo1);
-        company.add(passenger1);
-        company.add(passenger2);
-        company.add(cargo2);
-        int actual = 350;
-        int expected = calculator.exitLimitCalculator(company);
+        int expected = 350;
+        int actual = calculator.exitLimitCalculator(airLine);
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void payLoadCalculator() throws Exception {
-        company.add(cargo1);
-        company.add(passenger1);
-        company.add(passenger2);
-        company.add(cargo2);
-        int actual = 550;
-        int expected = calculator.payLoadCalculator(company);
+        int expected = 550;
+        int actual = calculator.payLoadCalculator(airLine);
         Assert.assertEquals(expected,actual);
     }
 }

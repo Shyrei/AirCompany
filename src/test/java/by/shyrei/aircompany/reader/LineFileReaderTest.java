@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 /**
  * Project AirCompany
@@ -14,16 +13,12 @@ import static org.junit.Assert.*;
  */
 public class LineFileReaderTest {
 
-    private static final String FILES_PATH = "files//line.txt";
+    private static final String FILES_PATH = "files/line.txt";
     private LineFileReader lineFileReader = new LineFileReader();
 
     @Test
     public void readerTest() throws Exception {
         List<String> testLines = lineFileReader.lineReader(FILES_PATH);
-        for (String line: testLines) {
-            System.out.println(line);
-        }
-        Assert.assertTrue("Не удалось прочитать файл", testLines.size() > 0);
+        Assert.assertTrue("Не удалось прочитать файл", !testLines.isEmpty());
     }
-
 }

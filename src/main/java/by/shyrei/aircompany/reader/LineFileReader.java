@@ -1,14 +1,12 @@
 package by.shyrei.aircompany.reader;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import by.shyrei.aircompany.exception.InitializationException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
 
 /**
  * Project AirCompany
@@ -17,15 +15,12 @@ import java.util.ArrayList;
  */
 public class LineFileReader {
 
-    private static Logger logger = LogManager.getLogger(LineFileReader.class);
-
-    public ArrayList<String> lineReader(String path) {
+    public ArrayList<String> lineReader(String path) throws InitializationException {
         ArrayList<String> lines = new ArrayList<>();
         try {
-            //Files.readAllLines(Paths.get(path) , StandardCharsets.UTF_8).stream().filter((String line) ->VALIDATE.matcher(line).matches()).forEach(lines::add);
             lines.addAll(Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8));
         } catch (IOException e) {
-            logger.log(Level.ERROR, "Ошибка с файлом: " + e.getMessage());
+            throw new InitializationException("Ошибка с файлом, " + e.getMessage());
         }
         return lines;
     }

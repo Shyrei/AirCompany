@@ -9,23 +9,31 @@ import java.util.ArrayList;
  */
 public class AirLine {
 
-    ArrayList<Aircraft> data = new ArrayList<Aircraft>();
-    public void rub(){
+    private ArrayList<AbstractAircraft> airLineData = new ArrayList<>();
 
+    public AirLine(){
     }
 
-    public void add(Aircraft plane){
-        data.add(plane);
+    public AirLine(ArrayList<AbstractAircraft> airLineData) {
+        this.airLineData = airLineData;
     }
 
-    public ArrayList<Aircraft> getAircraft(){
-       return data;
+    public void addAircraft(AbstractAircraft abstractAircraft){
+        airLineData.add(abstractAircraft);
+    }
+
+    public void removeAircraft(AbstractAircraft abstractAircraft) {
+        airLineData.remove(abstractAircraft);
+    }
+
+    public ArrayList<AbstractAircraft> getAllAircraft(){
+       return airLineData;
     }
 
     @Override
     public String toString() {
         return "AirLine{" +
-                "data=" + data +
+                "airLineData=" + airLineData +
                 '}';
     }
 }
